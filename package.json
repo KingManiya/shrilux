@@ -1,0 +1,28 @@
+{
+  "name": "shrilux",
+  "version": "1.0.0",
+  "description": "Flux библиотека",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc",
+    "tslint": "tslint ./lib/*.ts",
+    "tslint-fix": "tslint --fix ./lib/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KingManiya/shrilux.git"
+  },
+  "keywords": [
+    "flux"
+  ],
+  "author": "KingManiya",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/KingManiya/shrilux/issues"
+  },
+  "homepage": "https://github.com/KingManiya/shrilux#readme",
+  "devDependencies": {
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.5"
+  }
+}
