@@ -4,8 +4,9 @@ const {assert} = require('chai');
 describe('Проверка хранилища', () => {
   it('Инициализация c reducer', () => {
     const reducer = () => ({});
+    const initialState = {};
 
-    const store = new Store(reducer);
+    const store = new Store(reducer, initialState);
 
     assert.isObject(store);
   });
@@ -20,16 +21,18 @@ describe('Проверка хранилища', () => {
 
   it('Событие для изменения - dispatch', () => {
     const reducer = () => ({});
+    const initialState = {};
 
-    const store = new Store(reducer);
+    const store = new Store(reducer, initialState);
 
     assert.isFunction(store.dispatch);
   });
 
   it('Подписка - subscribe', (done) => {
     const reducer = () => ({});
+    const initialState = {};
 
-    const store = new Store(reducer);
+    const store = new Store(reducer, initialState);
 
     assert.isFunction(store.subscribe);
     store.subscribe(done);
@@ -39,8 +42,9 @@ describe('Проверка хранилища', () => {
 
   it('Отписка - unsubscribe', () => {
     const reducer = () => ({});
+    const initialState = {};
 
-    const store = new Store(reducer);
+    const store = new Store(reducer, initialState);
 
     const sub = store.subscribe(() => {assert.fail('Произошёл вызов подписки, после отписания')});
 

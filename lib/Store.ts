@@ -1,9 +1,9 @@
-export = class Store {
-    private store: object = {};
-    private reducer: (state: object, action: object) => object;
+export = class Store<T extends object, A extends object> {
+    private store: T;
+    private readonly reducer: (state: T, action: A) => T;
     private subscriptions: Array<(() => void)> = [];
 
-    constructor(reducer: (state: object, action: object) => object, initialState: object = {}) {
+    constructor(reducer: (state: T, action: A) => T, initialState: T) {
         this.reducer = reducer;
 
         this.store = initialState;
@@ -13,7 +13,7 @@ export = class Store {
      * Сообщение состоянию о новом действии
      * @param action
      */
-    public dispatch(action: object) {
+    public dispatch(action: A) {
         // Через функцию reducer получаем новое состояние
         this.store = this.reducer(this.store, action);
 
